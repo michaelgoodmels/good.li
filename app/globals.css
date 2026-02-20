@@ -1,26 +1,162 @@
 @import "tailwindcss";
 
+/* ─── Vintage colour palette ─────────────────────────────────────────────── */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background:      #f5efe6;
+  --foreground:      #2c1a0e;
+  --vintage-cream:   #f5efe6;
+  --vintage-light:   #e8dcc8;
+  --vintage-tan:     #c8a47e;
+  --vintage-brown:   #8b5e3c;
+  --vintage-dark:    #2c1a0e;
+  --vintage-amber:   #c17f24;
+  --vintage-muted:   #a08060;
 }
 
+/* Tailwind v4 design tokens */
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-background:     var(--background);
+  --color-foreground:     var(--foreground);
+  --font-sans:            var(--font-geist-sans);
+  --font-mono:            var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+/* ─── Base ───────────────────────────────────────────────────────────────── */
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+}
+
+/* ─── Film-grain overlay ─────────────────────────────────────────────────── */
+/* A fixed SVG noise filter sits above everything, pointer-events disabled   */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  opacity: 0.038;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* ─── Fade-in animations ─────────────────────────────────────────────────── */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in          { animation: fadeIn 1.2s ease-out 0s   forwards; }
+.fade-in-delay    { opacity: 0; animation: fadeIn 1.2s ease-out 0.4s forwards; }
+.fade-in-delay-2  { opacity: 0; animation: fadeIn 1.2s ease-out 0.9s forwards; }
+
+/* ─── Stone / embossed title ─────────────────────────────────────────────── */
+/* Layered text-shadow creates the illusion of carved letters in stone        */
+.stone-title {
+  font-family: var(--font-playfair), Georgia, "Times New Roman", serif;
+  color: #f0e6d3;
+  text-shadow:
+    0 1px 0  #c8a47e,
+    0 2px 0  #b08848,
+    0 3px 0  #906830,
+    0 4px 0  #785020,
+    0 5px 10px rgba(0, 0, 0, 0.9),
+    0 0 40px rgba(0, 0, 0, 0.5);
+  letter-spacing: 0.07em;
+  text-rendering: geometricPrecision;
+}
+
+/* ─── Polaroid card ──────────────────────────────────────────────────────── */
+/*
+ * Classic Polaroid proportions:
+ *   top / sides: ~8px (thin border)
+ *   bottom: ~62px (the wide "foot" where you'd write the date)
+ * Background fades from warm cream centre to slightly browned edges
+ * to simulate paper aging.
+ */
+.polaroid {
+  background: radial-gradient(ellipse at 50% 40%, #faf6e8 55%, #e6d8b2 100%);
+  padding: 8px 8px 62px 8px;
+  box-shadow:
+    0  1px  3px rgba(0, 0, 0, 0.14),
+    0  4px 14px rgba(0, 0, 0, 0.13),
+    0 14px 32px rgba(0, 0, 0, 0.08);
+  /* Subtle aged-frame inner border */
+  outline: 1px solid rgba(180, 150, 90, 0.18);
+  transition:
+    transform  0.3s ease,
+    box-shadow 0.3s ease;
+  cursor: pointer;
+  position: relative;
+}
+
+/* Faint line that separates the photo from the white foot */
+.polaroid::after {
+  content: "";
+  position: absolute;
+  left: 8px;
+  right: 8px;
+  bottom: 62px;
+  height: 1px;
+  background: rgba(0, 0, 0, 0.06);
+}
+
+/* Hover: straighten + lift */
+.polaroid:hover {
+  transform: rotate(0deg) scale(1.07) !important;
+  box-shadow:
+    0  3px  8px rgba(0, 0, 0, 0.22),
+    0  8px 24px rgba(0, 0, 0, 0.18),
+    0 20px 44px rgba(0, 0, 0, 0.12);
+}
+
+/* Handwritten-style caption in the bottom foot */
+.polaroid-caption {
+  font-family: var(--font-caveat), "Comic Sans MS", cursive;
+  font-size: 1.05rem;
+  font-weight: 600;
+  text-align: center;
+  color: #1e120a;
+  margin-top: 11px;
+  line-height: 1.1;
+}
+
+/* ─── Retro navigation button ────────────────────────────────────────────── */
+.vintage-btn {
+  font-family: var(--font-playfair), Georgia, serif;
+  display: inline-block;
+  padding: 0.55rem 1.5rem;
+  background: var(--vintage-tan);
+  color: var(--vintage-dark);
+  border: 2px solid var(--vintage-brown);
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 0.95rem;
+  letter-spacing: 0.05em;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.15);
+  transition:
+    background  0.25s ease,
+    color       0.25s ease,
+    transform   0.15s ease,
+    box-shadow  0.25s ease;
+}
+
+.vintage-btn:hover {
+  background: var(--vintage-brown);
+  color: var(--vintage-cream);
+  transform: translateY(-2px);
+  box-shadow: 3px 4px 10px rgba(0, 0, 0, 0.25);
+}
+
+/* Active / current page */
+.vintage-btn.active {
+  background: var(--vintage-dark);
+  color: var(--vintage-light);
+  border-color: var(--vintage-dark);
 }
