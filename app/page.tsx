@@ -70,23 +70,14 @@ export default function Home() {
           fill
           className="object-cover object-center"
           priority
-          style={{ filter: "brightness(0.88) contrast(1.08)" }}
         />
 
-        {/* Golden-hour gradient */}
+        {/* Dark overlay for text legibility */}
         <div
           className="absolute inset-0"
           style={{
             background:
-              "linear-gradient(168deg, rgba(190,118,16,0.22) 0%, rgba(130,60,8,0.38) 48%, rgba(12,6,2,0.74) 100%)",
-          }}
-        />
-        {/* Edge vignette */}
-        <div
-          className="absolute inset-0"
-          style={{
-            background:
-              "radial-gradient(ellipse at 50% 45%, transparent 38%, rgba(8,4,1,0.52) 100%)",
+              "linear-gradient(168deg, rgba(0,20,40,0.30) 0%, rgba(0,10,25,0.55) 100%)",
           }}
         />
 
@@ -99,7 +90,7 @@ export default function Home() {
 
           <p
             className="fade-in-delay text-center text-lg font-light italic tracking-widest"
-            style={{ color: "#d4c5a9", fontFamily: "var(--font-righteous), sans-serif" }}
+            style={{ color: "#a8d8f0", fontFamily: "var(--font-righteous), sans-serif" }}
           >
             Unsere Geschichte
           </p>
@@ -124,7 +115,7 @@ export default function Home() {
 
         <div
           className="fade-in-delay-2 absolute bottom-8 left-1/2 -translate-x-1/2 text-xs tracking-widest"
-          style={{ color: "#c8a47e", fontFamily: "var(--font-righteous), sans-serif" }}
+          style={{ color: "#a8d8f0", fontFamily: "var(--font-righteous), sans-serif" }}
         >
           ↓
         </div>
@@ -148,7 +139,7 @@ export default function Home() {
             <h2
               className="mb-10 text-center text-3xl font-bold"
               style={{
-                color: "var(--vintage-brown)",
+                color: "#5bb8e8",
                 fontFamily: "var(--font-righteous), sans-serif",
                 letterSpacing: "0.04em",
               }}
@@ -156,7 +147,7 @@ export default function Home() {
               {dest.label}
               <span
                 className="ml-3 text-base font-normal italic"
-                style={{ color: "var(--vintage-muted)" }}
+                style={{ color: "#7ecae0" }}
               >
                 {dest.year}
               </span>
@@ -197,8 +188,8 @@ export default function Home() {
         <footer
           className="py-8 text-center text-sm"
           style={{
-            color: "var(--vintage-muted)",
-            borderTop: "1px solid var(--vintage-tan)",
+            color: "#7ecae0",
+            borderTop: "1px solid #7ecae0",
             fontFamily: "var(--font-righteous), sans-serif",
             fontStyle: "italic",
           }}

@@ -28,17 +28,6 @@ body {
   font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
 }
 
-/* ─── Film-grain overlay ─────────────────────────────────────────────────── */
-/* A fixed SVG noise filter sits above everything, pointer-events disabled   */
-body::after {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
-  opacity: 0.038;
-  pointer-events: none;
-  z-index: 9999;
-}
 
 /* ─── Fade-in animations ─────────────────────────────────────────────────── */
 @keyframes fadeIn {
@@ -57,17 +46,12 @@ body::after {
 .fade-in-delay-2  { opacity: 0; animation: fadeIn 1.2s ease-out 0.9s forwards; }
 
 /* ─── Stone / embossed title ─────────────────────────────────────────────── */
-/* Layered text-shadow creates the illusion of carved letters in stone        */
 .stone-title {
   font-family: var(--font-bebas), sans-serif;
-  color: #f0e6d3;
+  color: #a8d8f0;
   text-shadow:
-    0 1px 0  #c8a47e,
-    0 2px 0  #b08848,
-    0 3px 0  #906830,
-    0 4px 0  #785020,
-    0 5px 10px rgba(0, 0, 0, 0.9),
-    0 0 40px rgba(0, 0, 0, 0.5);
+    0 2px 8px rgba(0, 0, 0, 0.7),
+    0 0 40px rgba(0, 0, 0, 0.4);
   letter-spacing: 0.07em;
   text-rendering: geometricPrecision;
 }
@@ -164,9 +148,9 @@ body::after {
   font-family: var(--font-righteous), sans-serif;
   display: inline-block;
   padding: 0.45rem 1.25rem;
-  background: rgba(30, 15, 5, 0.45);
-  color: #e8dcc8;
-  border: 1px solid rgba(200, 164, 126, 0.55);
+  background: rgba(10, 25, 45, 0.45);
+  color: #a8d8f0;
+  border: 1px solid rgba(120, 190, 230, 0.55);
   border-radius: 5px;
   text-decoration: none;
   font-size: 0.9rem;
@@ -180,15 +164,15 @@ body::after {
 }
 
 .vintage-btn-hero:hover {
-  background: rgba(200, 164, 126, 0.35);
-  border-color: rgba(200, 164, 126, 0.9);
-  color: #fff8ee;
+  background: rgba(120, 190, 230, 0.25);
+  border-color: rgba(120, 190, 230, 0.9);
+  color: #d0eeff;
 }
 
 .vintage-btn-hero.active {
-  background: rgba(200, 164, 126, 0.25);
-  border-color: #c8a47e;
-  color: #f0e6d3;
+  background: rgba(120, 190, 230, 0.15);
+  border-color: #78bde6;
+  color: #c0e8ff;
 }
 
 /* ─── Retro navigation button ────────────────────────────────────────────── */
