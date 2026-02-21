@@ -59,7 +59,7 @@ body::after {
 /* ─── Stone / embossed title ─────────────────────────────────────────────── */
 /* Layered text-shadow creates the illusion of carved letters in stone        */
 .stone-title {
-  font-family: var(--font-righteous), sans-serif;
+  font-family: var(--font-bebas), sans-serif;
   color: #f0e6d3;
   text-shadow:
     0 1px 0  #c8a47e,
@@ -154,7 +154,7 @@ body::after {
  */
 .polaroid-number {
   position: absolute;
-  bottom: 6px;
+  bottom: 3px;
   left: 10px;
   font-family: var(--font-geist-mono), monospace;
   font-size: 0.6rem;

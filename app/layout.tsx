@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Caveat, Geist, Geist_Mono, Righteous } from "next/font/google";
+import { Bebas_Neue, Caveat, Geist, Geist_Mono, Righteous } from "next/font/google";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -15,6 +15,13 @@ const geistMono = Geist_Mono({
 // Surfer-style display font for all headings and UI
 const righteous = Righteous({
   variable: "--font-righteous",
+  subsets: ["latin"],
+  weight: "400",
+});
+
+// Bold condensed surf-magazine font for the main title
+const bebasNeue = Bebas_Neue({
+  variable: "--font-bebas",
   subsets: ["latin"],
   weight: "400",
 });
@@ -39,7 +46,7 @@ export default function RootLayout({
   return (
     <html lang="de">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${righteous.variable} ${caveat.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${righteous.variable} ${bebasNeue.variable} ${caveat.variable} antialiased`}
       >
         {children}
       </body>
