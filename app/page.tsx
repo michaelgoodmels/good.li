@@ -176,8 +176,8 @@ export default function Home() {
                       <Image
                         src={src}
                         alt={`${dest.label} ${dest.year} – Foto ${num}`}
-                        width={148}
-                        height={148}
+                        width={220}
+                        height={220}
                       />
                     </span>
                     <p className="polaroid-caption">
