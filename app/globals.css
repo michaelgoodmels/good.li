@@ -180,9 +180,9 @@ body {
   font-family: var(--font-righteous), sans-serif;
   display: inline-block;
   padding: 0.55rem 1.5rem;
-  background: var(--vintage-tan);
-  color: var(--vintage-dark);
-  border: 2px solid var(--vintage-brown);
+  background: rgba(120, 190, 230, 0.15);
+  color: #a8d8f0;
+  border: 2px solid rgba(120, 190, 230, 0.55);
   border-radius: 6px;
   text-decoration: none;
   font-size: 0.95rem;
@@ -196,15 +196,16 @@ body {
 }
 
 .vintage-btn:hover {
-  background: var(--vintage-brown);
-  color: var(--vintage-cream);
+  background: rgba(120, 190, 230, 0.30);
+  color: #d0eeff;
+  border-color: rgba(120, 190, 230, 0.9);
   transform: translateY(-2px);
   box-shadow: 3px 4px 10px rgba(0, 0, 0, 0.25);
 }
 
 /* Active / current page */
 .vintage-btn.active {
-  background: var(--vintage-dark);
-  color: var(--vintage-light);
-  border-color: var(--vintage-dark);
+  background: rgba(120, 190, 230, 0.25);
+  color: #c0e8ff;
+  border-color: #78bde6;
 }
