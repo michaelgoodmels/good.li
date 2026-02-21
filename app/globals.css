@@ -82,7 +82,8 @@ body::after {
 .polaroid {
   display: inline-block;
   background: radial-gradient(ellipse at 50% 38%, #faf6e8 50%, #e8d9b0 100%);
-  padding: 7px 7px 48px 7px;
+  /* uniform frame — footer height comes from .polaroid-footer */
+  padding: 7px;
   box-shadow:
     0  1px  3px rgba(0, 0, 0, 0.15),
     0  4px 14px rgba(0, 0, 0, 0.14),
@@ -92,18 +93,18 @@ body::after {
     transform  0.3s ease,
     box-shadow 0.3s ease;
   cursor: pointer;
-  position: relative;
 }
 
-/* Photo-to-footer dividing line */
-.polaroid::after {
-  content: "";
-  position: absolute;
-  left: 7px;
-  right: 7px;
-  bottom: 48px;
-  height: 1px;
-  background: rgba(0, 0, 0, 0.08);
+/* Footer strip — explicit flex column so items can't overlap */
+.polaroid-footer {
+  height: 54px;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 280px; /* match photo width */
 }
 
 /* Hover: straighten + lift */
@@ -139,22 +140,15 @@ body::after {
   font-size: 0.98rem;
   font-weight: 600;
   text-align: center;
-  /* dark-blue ballpoint ink */
   color: #1c2340;
-  /* vertically centre text in the 48 px foot */
-  margin-top: 10px;
   line-height: 1;
   letter-spacing: 0.02em;
-  position: relative;
 }
 
-/*
- * Film-print frame number — the small orange number printed bottom-right
- * on every developed photo, like analogue 35 mm prints.
- */
+/* Pinned to the bottom-left corner of the footer strip */
 .polaroid-number {
   position: absolute;
-  bottom: 2px;
+  bottom: 5px;
   left: 8px;
   font-family: var(--font-geist-mono), monospace;
   font-size: 0.58rem;
@@ -164,15 +158,6 @@ body::after {
   user-select: none;
 }
 
-/* Faint ruled line below the handwritten text */
-.polaroid-caption::after {
-  content: "";
-  display: block;
-  margin: 5px auto 0;
-  width: 72%;
-  height: 1px;
-  background: rgba(0, 0, 0, 0.09);
-}
 
 /* ─── Hero navigation button (sits on top of the mountain photo) ─────────── */
 .vintage-btn-hero {

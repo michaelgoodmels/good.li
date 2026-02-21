@@ -180,10 +180,12 @@ export default function Home() {
                         height={280}
                       />
                     </span>
-                    <p className="polaroid-caption">
+                    <div className="polaroid-footer">
+                      <p className="polaroid-caption">
+                        {dest.label} ʼ{dest.year.slice(2)}
+                      </p>
                       <span className="polaroid-number">Polaroid {num}</span>
-                      {dest.label} ʼ{dest.year.slice(2)}
-                    </p>
+                    </div>
                   </div>
                 );
               })}
