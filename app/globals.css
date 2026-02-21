@@ -59,7 +59,7 @@ body::after {
 /* ─── Stone / embossed title ─────────────────────────────────────────────── */
 /* Layered text-shadow creates the illusion of carved letters in stone        */
 .stone-title {
-  font-family: var(--font-playfair), Georgia, "Times New Roman", serif;
+  font-family: var(--font-righteous), sans-serif;
   color: #f0e6d3;
   text-shadow:
     0 1px 0  #c8a47e,
@@ -74,21 +74,20 @@ body::after {
 
 /* ─── Polaroid card ──────────────────────────────────────────────────────── */
 /*
- * Classic Polaroid proportions:
- *   top / sides: ~8px (thin border)
- *   bottom: ~62px (the wide "foot" where you'd write the date)
- * Background fades from warm cream centre to slightly browned edges
- * to simulate paper aging.
+ * Authentic Polaroid 600 proportions (scaled to 148 px photo):
+ *   top / sides : 7 px
+ *   bottom foot : 48 px  (where you write the caption)
+ * Aged paper gradient + subtle frame outline.
  */
 .polaroid {
-  background: radial-gradient(ellipse at 50% 40%, #faf6e8 55%, #e6d8b2 100%);
-  padding: 8px 8px 62px 8px;
+  display: inline-block;
+  background: radial-gradient(ellipse at 50% 38%, #faf6e8 50%, #e8d9b0 100%);
+  padding: 7px 7px 48px 7px;
   box-shadow:
-    0  1px  3px rgba(0, 0, 0, 0.14),
-    0  4px 14px rgba(0, 0, 0, 0.13),
+    0  1px  3px rgba(0, 0, 0, 0.15),
+    0  4px 14px rgba(0, 0, 0, 0.14),
     0 14px 32px rgba(0, 0, 0, 0.08);
-  /* Subtle aged-frame inner border */
-  outline: 1px solid rgba(180, 150, 90, 0.18);
+  outline: 1px solid rgba(175, 145, 85, 0.20);
   transition:
     transform  0.3s ease,
     box-shadow 0.3s ease;
@@ -96,40 +95,120 @@ body::after {
   position: relative;
 }
 
-/* Faint line that separates the photo from the white foot */
+/* Photo-to-footer dividing line */
 .polaroid::after {
   content: "";
   position: absolute;
-  left: 8px;
-  right: 8px;
-  bottom: 62px;
+  left: 7px;
+  right: 7px;
+  bottom: 48px;
   height: 1px;
-  background: rgba(0, 0, 0, 0.06);
+  background: rgba(0, 0, 0, 0.08);
 }
 
 /* Hover: straighten + lift */
 .polaroid:hover {
   transform: rotate(0deg) scale(1.07) !important;
   box-shadow:
-    0  3px  8px rgba(0, 0, 0, 0.22),
+    0  3px  8px rgba(0, 0, 0, 0.24),
     0  8px 24px rgba(0, 0, 0, 0.18),
     0 20px 44px rgba(0, 0, 0, 0.12);
 }
 
-/* Handwritten-style caption in the bottom foot */
+/* Photo container — clips the image to an exact square */
+.polaroid-photo {
+  width: 148px;
+  height: 148px;
+  overflow: hidden;
+  display: block;
+}
+
+.polaroid-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/*
+ * Caption strip — mimics ballpoint-pen handwriting on the white footer.
+ * A faint ruled guide-line sits below the text.
+ */
 .polaroid-caption {
-  font-family: var(--font-caveat), "Comic Sans MS", cursive;
-  font-size: 1.05rem;
+  font-family: var(--font-caveat), cursive;
+  font-size: 0.98rem;
   font-weight: 600;
   text-align: center;
-  color: #1e120a;
-  margin-top: 11px;
-  line-height: 1.1;
+  /* dark-blue ballpoint ink */
+  color: #1c2340;
+  /* vertically centre text in the 48 px foot */
+  margin-top: 10px;
+  line-height: 1;
+  letter-spacing: 0.02em;
+  position: relative;
+}
+
+/*
+ * Film-print frame number — the small orange number printed bottom-right
+ * on every developed photo, like analogue 35 mm prints.
+ */
+.polaroid-number {
+  position: absolute;
+  bottom: 6px;
+  right: 10px;
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 0.6rem;
+  color: #b86a00;
+  letter-spacing: 0.08em;
+  opacity: 0.75;
+  user-select: none;
+}
+
+/* Faint ruled line below the handwritten text */
+.polaroid-caption::after {
+  content: "";
+  display: block;
+  margin: 5px auto 0;
+  width: 72%;
+  height: 1px;
+  background: rgba(0, 0, 0, 0.09);
+}
+
+/* ─── Hero navigation button (sits on top of the mountain photo) ─────────── */
+.vintage-btn-hero {
+  font-family: var(--font-righteous), sans-serif;
+  display: inline-block;
+  padding: 0.45rem 1.25rem;
+  background: rgba(30, 15, 5, 0.45);
+  color: #e8dcc8;
+  border: 1px solid rgba(200, 164, 126, 0.55);
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  letter-spacing: 0.06em;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  transition:
+    background  0.25s ease,
+    border-color 0.25s ease,
+    color        0.25s ease;
+}
+
+.vintage-btn-hero:hover {
+  background: rgba(200, 164, 126, 0.35);
+  border-color: rgba(200, 164, 126, 0.9);
+  color: #fff8ee;
+}
+
+.vintage-btn-hero.active {
+  background: rgba(200, 164, 126, 0.25);
+  border-color: #c8a47e;
+  color: #f0e6d3;
 }
 
 /* ─── Retro navigation button ────────────────────────────────────────────── */
 .vintage-btn {
-  font-family: var(--font-playfair), Georgia, serif;
+  font-family: var(--font-righteous), sans-serif;
   display: inline-block;
   padding: 0.55rem 1.5rem;
   background: var(--vintage-tan);

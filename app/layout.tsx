@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Caveat, Geist, Geist_Mono, Playfair_Display } from "next/font/google";
+import { Caveat, Geist, Geist_Mono, Righteous } from "next/font/google";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -12,12 +12,11 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-// Retro serif font for headings and accents
-const playfair = Playfair_Display({
-  variable: "--font-playfair",
+// Surfer-style display font for all headings and UI
+const righteous = Righteous({
+  variable: "--font-righteous",
   subsets: ["latin"],
-  weight: ["400", "700", "900"],
-  style: ["normal", "italic"],
+  weight: "400",
 });
 
 // Handwriting font for polaroid captions
@@ -40,7 +39,7 @@ export default function RootLayout({
   return (
     <html lang="de">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${playfair.variable} ${caveat.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${righteous.variable} ${caveat.variable} antialiased`}
       >
         {children}
       </body>
