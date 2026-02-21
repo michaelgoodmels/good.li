@@ -181,7 +181,7 @@ export default function Home() {
                       />
                     </span>
                     <p className="polaroid-caption">
-                      <span className="polaroid-number">{num}</span>
+                      <span className="polaroid-number">Polaroid {num}</span>
                       {dest.label} ʼ{dest.year.slice(2)}
                     </p>
                   </div>
