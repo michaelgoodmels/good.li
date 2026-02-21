@@ -117,8 +117,8 @@ body::after {
 
 /* Photo container — clips the image to an exact square */
 .polaroid-photo {
-  width: 220px;
-  height: 220px;
+  width: 280px;
+  height: 280px;
   overflow: hidden;
   display: block;
 }
