@@ -91,7 +91,7 @@ export default function HibiscusDecor() {
       <Hibiscus
         filterId="hib-1"
         color="#b8dff0"
-        size={100}
+        size={65}
         style={{
           bottom: "-6px",
           right: "-6px",
@@ -104,7 +104,7 @@ export default function HibiscusDecor() {
       <Hibiscus
         filterId="hib-2"
         color="#3db0e2"
-        size={88}
+        size={56}
         style={{
           bottom: "40px",
           left: "-8px",
@@ -117,7 +117,7 @@ export default function HibiscusDecor() {
       <Hibiscus
         filterId="hib-3"
         color="#1478c0"
-        size={78}
+        size={50}
         style={{
           top: "100px",
           right: "14px",
