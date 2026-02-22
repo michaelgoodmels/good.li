@@ -12,7 +12,7 @@ const navItems = [
 const members = [
   {
     name: "Michael",
-    photo: "https://picsum.photos/seed/michael/280/280",
+    photo: "/images/who/michael.jpg",
     rotation: "-3deg",
     caption: "Michael ʼ74",
     description:
@@ -20,7 +20,7 @@ const members = [
   },
   {
     name: "Nadine",
-    photo: "https://picsum.photos/seed/nadine/280/280",
+    photo: "/images/who/nadine.jpg",
     rotation: "2.5deg",
     caption: "Nadine ʼ78",
     description:
@@ -28,7 +28,7 @@ const members = [
   },
   {
     name: "Janis",
-    photo: "https://picsum.photos/seed/janis/280/280",
+    photo: "/images/who/janis.png",
     rotation: "-2deg",
     caption: "Janis ʼ05",
     description:
@@ -36,7 +36,7 @@ const members = [
   },
   {
     name: "Sina",
-    photo: "https://picsum.photos/seed/sina/280/280",
+    photo: "/images/who/sina.jpg",
     rotation: "3.5deg",
     caption: "Sina ʼ07",
     description:
@@ -44,7 +44,7 @@ const members = [
   },
   {
     name: "Juna",
-    photo: "https://picsum.photos/seed/juna/280/280",
+    photo: "/images/who/juna.jpg",
     rotation: "-1.5deg",
     caption: "Juna 🐾",
     description:
