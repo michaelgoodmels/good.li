@@ -14,7 +14,7 @@ const members = [
     name: "Michael",
     photo: "/images/who/michael.jpg",
     rotation: "-3deg",
-    caption: "Michael ʼ74",
+    caption: "Michael ʼ79",
     description:
       "Michael ist ein visionärer Pionier und Macher zugleich. Wenn er ein Ziel vor Augen hat, peilt er es an und zieht es durch — kein Weg zu weit, kein Ziel zu hoch. Das, was er sich in den Kopf setzt, bekommt er, koste es was es wolle. Dies macht er für seine Familie, die er über alles liebt, jedoch auch für sich selbst. Seine Freizeit verbringt Michael gerne in der Natur mit seinen liebsten Menschen um sich herum. Zu Fuss, mit dem Bike oder auf den Skiern im Winter fühlt er sich in der frischen Luft wohl und holt sich so neue Energie, um im Alltag Lösungen für knifflige Probleme in der digitalen Welt zu erarbeiten. Und wenn er den Abend auf der Terrasse neben einem Feuer mit einem feinen Tropfen Wein aus seinem Lieblingsland Italien ausklingen kann, kann es vorkommen, dass er unter dem Sternenhimmel von St. Martin einschläft — und seine Träume auch in diesen verbleiben.",
   },
@@ -22,7 +22,7 @@ const members = [
     name: "Nadine",
     photo: "/images/who/nadine.jpg",
     rotation: "2.5deg",
-    caption: "Nadine ʼ78",
+    caption: "Nadine ʼ82",
     description:
       "Nadine ist die unermüdliche Kraft im Hintergrund. Ihre strukturierte Art sieht es vor, dass alles seinen Platz hat und nichts dem Zufall überlassen wird. Ihre Kochkünste sind himmlisch, und sie kann damit alle Familienmitglieder (inkl. Juna) auf die Sekunde an den Tisch beordern. Nadine ist gerne in der Natur, am liebsten jedoch an den Stellen, an denen das Meer strandet. Die Liebe zum Wein hat sie mit Michael gemeinsam, und so hilft sie jeweils, die Flaschen zu leeren — aber erst wenn alles im und um das Haus erledigt ist und alle bedient worden sind. Sie träumt von einer Residenz in Italien, von der sie mit ihrer Vespa alles erledigen kann, was nötig ist.",
   },
@@ -30,7 +30,7 @@ const members = [
     name: "Janis",
     photo: "/images/who/janis.png",
     rotation: "-2deg",
-    caption: "Janis ʼ05",
+    caption: "Janis ʼ11",
     description:
       "Janis hat eine sehr fröhliche und aufgestellte Art und kann lachen wie kein anderer — es muss aber stimmig sein und die Gesellschaft muss passen. Seine hilfsbereite und herzensgute Art bekommen die Menschen zu spüren, die ihm gleichgesinnt und ihm gegenüber loyal sind. Janis würde sein letztes Hemd hingeben, falls es jemand benötigt. Momentan ist dieses jedoch nicht verfügbar, da er mit seinem Töffli unterwegs ist — und an diesem jede Minute, die er bekommt, schraubt.",
   },
@@ -38,7 +38,7 @@ const members = [
     name: "Sina",
     photo: "/images/who/sina.jpg",
     rotation: "3.5deg",
-    caption: "Sina ʼ07",
+    caption: "Sina ʼ13",
     description:
       "Sina ist unser modebewusstes Wesen im Haus. Sie ist immer gestylt, trägt die Kleider bewusst und riecht extrem gut. Sehr gut organisiert und auch talentiert meistert Sina ihr Leben. Turnen ist ihre Leidenschaft — ohne Bewegung geht es ihr nicht gut. Ob mit den Skiern oder dem Snowboard die Pisten brettern: es muss einfach Tempo haben und Spass bereiten.",
   },
@@ -46,7 +46,7 @@ const members = [
     name: "Juna",
     photo: "/images/who/juna.jpg",
     rotation: "-1.5deg",
-    caption: "Juna 🐾",
+    caption: "Juna ʼ21",
     description:
       "Juna, unsere Hündin, ist die Schönste von uns und hat auch am meisten Energie. Juna ist stets besorgt um uns und hält die Familie zusammen. Ohne sie wäre das Leben nur halb so …",
   },

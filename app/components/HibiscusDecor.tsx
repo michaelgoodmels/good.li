@@ -91,10 +91,10 @@ export default function HibiscusDecor() {
       <Hibiscus
         filterId="hib-1"
         color="#b8dff0"
-        size={172}
+        size={100}
         style={{
-          bottom: "-10px",
-          right: "-10px",
+          bottom: "-6px",
+          right: "-6px",
           opacity: 0.6,
           zIndex: 20,
           transform: "rotate(-15deg)",
@@ -104,10 +104,10 @@ export default function HibiscusDecor() {
       <Hibiscus
         filterId="hib-2"
         color="#3db0e2"
-        size={154}
+        size={88}
         style={{
-          bottom: "60px",
-          left: "-12px",
+          bottom: "40px",
+          left: "-8px",
           opacity: 0.52,
           zIndex: 20,
           transform: "rotate(22deg)",
@@ -117,10 +117,10 @@ export default function HibiscusDecor() {
       <Hibiscus
         filterId="hib-3"
         color="#1478c0"
-        size={138}
+        size={78}
         style={{
           top: "100px",
-          right: "20px",
+          right: "14px",
           opacity: 0.4,
           zIndex: 20,
           transform: "rotate(38deg)",
