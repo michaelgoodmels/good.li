@@ -13,7 +13,7 @@ const destinations = [
     prefix: "/images/fort-lauderdale/fl",
     count: 10,
     // photo 7 (index 6) rotated further left
-    rotations: ["-4deg", "3deg", "-1.5deg", "4.5deg", "-2.5deg", "3.5deg", "-9deg", "1.5deg", "-4.5deg", "2deg"],
+    rotations: ["-4deg", "3deg", "-1.5deg", "4.5deg", "-2.5deg", "3.5deg", "-18deg", "1.5deg", "-4.5deg", "2deg"],
   },
   {
     label: "California & Mexico",
