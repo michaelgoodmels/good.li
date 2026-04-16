@@ -1,5 +1,3 @@
-1
-
 import Image from "next/image";
 import Link from "next/link";
 
@@ -56,9 +54,13 @@ const navItems = [
 
 // ─── Page ─────────────────────────────────────────────────────────────────────
 
+function getRandomHeroPhoto() {
+  return ALL_PHOTOS[Math.floor(Math.random() * ALL_PHOTOS.length)];
+}
+
 export default function Home() {
   // New random hero photo on every page load
-  const heroPhoto = ALL_PHOTOS[Math.floor(Math.random() * ALL_PHOTOS.length)];
+  const heroPhoto = getRandomHeroPhoto();
 
   return (
     <main>
