@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Bebas_Neue, Caveat, Geist, Geist_Mono, Righteous } from "next/font/google";
 import "./globals.css";
+import Header from "./components/Header";
 import HibiscusDecor from "./components/HibiscusDecor";
 
 const geistSans = Geist({
@@ -49,6 +50,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${righteous.variable} ${bebasNeue.variable} ${caveat.variable} antialiased`}
       >
+        <Header />
         {children}
         <HibiscusDecor />
       </body>
