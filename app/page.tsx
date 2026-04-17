@@ -1,43 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
+import { destinations } from "@/app/lib/gallery-data";
 
 // Force dynamic rendering so Math.random() runs on every request
 export const dynamic = "force-dynamic";
 
-// ─── Data ─────────────────────────────────────────────────────────────────────
-
-const destinations = [
-  {
-    label: "Fort Lauderdale",
-    year: "2007",
-    prefix: "/images/fort-lauderdale/fl",
-    count: 10,
-    // photo 7 (index 6) rotated further left
-    rotations: ["-4deg", "3deg", "-1.5deg", "4.5deg", "-2.5deg", "3.5deg", "-3deg", "1.5deg", "-4.5deg", "2deg"],
-  },
-  {
-    label: "California & Mexico",
-    year: "2009",
-    prefix: "/images/california-mexico/ca",
-    count: 10,
-    rotations: ["-4deg", "3deg", "-1.5deg", "4.5deg", "-2.5deg", "3.5deg", "-3deg", "1.5deg", "-4.5deg", "2deg"],
-  },
-  {
-    label: "Miami",
-    year: "2011",
-    prefix: "/images/miami/mi",
-    count: 10,
-    // photo 4 (index 3) rotated right, photo 5 (index 4) rotated left
-    rotations: ["-4deg", "3deg", "-1.5deg", "10deg", "-9deg", "3.5deg", "-3deg", "1.5deg", "-4.5deg", "2deg"],
-  },
-  {
-    label: "Malediven",
-    year: "2007",
-    prefix: "/images/maledives/mal",
-    count: 10,
-    rotations: ["-4deg", "3deg", "-1.5deg", "4.5deg", "-2.5deg", "3.5deg", "-3deg", "1.5deg", "-4.5deg", "2deg"],
-  },
-];
 
 // Pool of all 40 gallery photos — one is picked at random for the hero
 const ALL_PHOTOS = destinations.flatMap(({ prefix, count }) =>
@@ -47,7 +14,7 @@ const ALL_PHOTOS = destinations.flatMap(({ prefix, count }) =>
 const navItems = [
   { label: "Home",       href: "/"           },
   { label: "Who",        href: "/who"        },
-  { label: "Background", href: "/background" },
+  { label: "Pics", href: "/background" },
   { label: "Future",     href: "/future"     },
   { label: "Contact",    href: "/contact"    },
 ];
