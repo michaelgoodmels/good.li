@@ -12,11 +12,12 @@ const ALL_PHOTOS = destinations.flatMap(({ prefix, count }) =>
 );
 
 const navItems = [
-  { label: "Home",       href: "/"           },
-  { label: "Who",        href: "/who"        },
-  { label: "Pics", href: "/background" },
-  { label: "Future",     href: "/future"     },
-  { label: "Contact",    href: "/contact"    },
+  { label: "Home", href: "/" },
+  { label: "Who", href: "/who" },
+  { label: "Gallery", href: "/gallery" },
+  { label: "Background", href: "/background" },
+  { label: "Future", href: "/future" },
+  { label: "Contact", href: "/contact" },
 ];
 
 // ─── Page ─────────────────────────────────────────────────────────────────────
